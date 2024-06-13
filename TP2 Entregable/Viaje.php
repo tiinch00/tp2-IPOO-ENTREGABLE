@@ -139,7 +139,7 @@ class Viaje{
 
 		foreach($coleccion as $elemento){
 
-			$cadena = $cadena . " ". $elemento ."\n";
+			$cadena = $cadena ."". $elemento ."\n";
 		}
 		return $cadena;
 	}
@@ -227,7 +227,7 @@ class Viaje{
 
             while ($pasajeroNro<count($colPasajeros)&&!$encontrado){
 
-                if ($colPasajeros[$pasajeroNro]->getDocumentoPasajero() === $documentoPasajero) {
+                if ($colPasajeros[$pasajeroNro]->getDocumentoPasajero() == $documentoPasajero) {
                     $encontrado = true;
                     $pasajero = $colPasajeros[$pasajeroNro];
                    
@@ -256,8 +256,9 @@ class Viaje{
 
         if ($this->agregarPasajero($objPasajero)){
 
-            $sumaCostos += $costoViaje ;
+            $costo = $costoViaje + $sumaCostos;
 
+            $sumaCostos += $costo;
 
             $this->setSumaCostosAbonados($sumaCostos);
 

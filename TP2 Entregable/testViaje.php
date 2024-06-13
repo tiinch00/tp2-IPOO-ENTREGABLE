@@ -80,11 +80,11 @@ do {
             $viaje = new Viaje($codigo, $destino, $cantidadMaximaPasajeros,$pasajeros, $responsable,$costoViaje, $sumaCostos);
             if ($viaje != null){
 
-                echo "--------------------\n" . 
+                echo"----------------------\n" . 
                     "----------------------\n".
-                    "Viaje cargado con exito!".
+                    "Viaje cargado con exito!\n".
                     "----------------------\n" . 
-                     "--------------------\n";
+                    "----------------------\n";
 
             }
             
@@ -115,9 +115,13 @@ do {
                 $pasajero = new Pasajero($nombrePasajero,$apellidoPasajero,$dniPasajero,$numTelefono);
                 if ($viaje->agregarPasajero($pasajero)) {
                     echo "\n";
-                    echo "\n";
-                    echo "Pasajero agregado al viaje correctamente.\n";
-                    echo $viaje->retornarCadena($this->getColPasajeros());
+                    echo "\n".
+                         "----------------------\n". 
+                         "----------------------\n";
+                    echo "Pasajero agregado al viaje correctamente.\n".
+                         "----------------------\n". 
+                         "----------------------\n";
+                    echo $viaje->retornarCadena($viaje->getColPasajeros());
                     echo "\n";
                     echo "\n";
                 } else {
@@ -147,13 +151,24 @@ do {
                 $pasajero = $viaje->mostrarPasajero($documentoPasajero);
 
                 if ($pasajero != null) {
-                    
 
+                    echo "\n".
+                         "----------------------\n". 
+                         "----------------------\n".
+                         "----------------------\n".
+                         "----------------------\n"; 
                     echo "Datos del pasajero:\n";
                     echo "Nombre: " . $pasajero->getNombrePasajero() . "\n";
                     echo "Apellido: " . $pasajero->getApellidoPasajero() . "\n";
                     echo "Documento: " . $pasajero->getDocumentoPasajero() . "\n";
-                    echo "Teléfono: " . $pasajero->getNumeroTelefono() . "\n";
+                    echo "Teléfono: " . $pasajero->getNumeroTelefono() . "\n".
+                         "----------------------\n". 
+                         "----------------------\n".
+                         "----------------------\n".
+                         "----------------------\n";
+                    echo "\n";
+                    echo "\n";
+                    echo "\n";
                 } else {
                     echo "\n";
                     echo "\n";
@@ -197,19 +212,31 @@ do {
                         echo "Ingrese el nuevo nombre: ";
                         $nombre=trim(fgets(STDIN));
                         $pasajero->setNombrePasajero($nombre);
-                        echo "Nombre modificado exitosamente.";
+                        echo "Nombre modificado exitosamente.".
+                             "----------------------\n". 
+                             "----------------------\n".
+                             "----------------------\n".
+                             "----------------------\n";
                         break;
                     case 2 :
                         echo "ingrese el nuevo apellido: ";
                         $apellido=trim(fgets(STDIN));
                         $pasajero->setApellidoPasajero($apellido);
-                        echo "Apellido modificado exitosamente.";
+                        echo "Apellido modificado exitosamente.\n".
+                             "----------------------\n". 
+                             "----------------------\n".
+                             "----------------------\n".
+                             "----------------------\n";
                         break;
                      case 3:
                         echo "Ingrese el nuevo telefono: ";
                         $telefono = trim(fgets(STDIN));
                         $pasajero->setNumeroTelefono($telefono);
-                        echo "Telefono modificado exitosamente.\n";
+                        echo "Telefono modificado exitosamente.\n".
+                             "----------------------\n". 
+                             "----------------------\n".
+                             "----------------------\n".
+                             "----------------------\n";
                         break;
 
                      default:
@@ -221,16 +248,11 @@ do {
                             break;
 
                 } 
-                echo "\n";
-                echo "\n";
-                echo $pasajero;
-                echo "\n";
-                echo "\n";
 
              }else {
                 echo "\n";
                 echo "\n";
-                echo  "No hay pasajeros para modificar ";
+                echo  "No hay pasajeros con ese documento para modificar ";
                 echo "\n";
                 echo "\n";
             }

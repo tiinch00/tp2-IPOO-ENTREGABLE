@@ -4,10 +4,10 @@
 
 class Pasajero{
 
-    private string $nombrePasajero;
-    private string $apellidoPasajero;
-    private int $documentoPasajero;
-    private int $numeroTelefono;
+    private $nombrePasajero;
+    private $apellidoPasajero;
+    private  $documentoPasajero;
+    private  $numeroTelefono;
 
     public function __construct($nombre,$apellido,$dni,$numTelefono){
 
@@ -101,9 +101,9 @@ class Pasajero{
 
     public function __toString(){
 
-        $cadena= "Nombre y apellido del pasajero: ".$this->getNombrePasajero()." ".$this->getApellidoPasajero()."\n";
+        $cadena  ="Nombre y apellido del pasajero: ".$this->getNombrePasajero()." ".$this->getApellidoPasajero()."\n";
         $cadena .="Numero de documento: ".$this->getDocumentoPasajero()."\n";
-        $cadena .= "Telefono: ".$this->getNumeroTelefono()."\n";
+        $cadena .="Telefono: ".$this->getNumeroTelefono()."\n";
 
         return $cadena;
     }
