@@ -36,7 +36,7 @@ class Pasajero{
     {
         $this->nombrePasajero = $nombre;
 
-        return $this;
+        
     }
 
     /**
@@ -56,7 +56,7 @@ class Pasajero{
     {
         $this->apellidoPasajero = $apellido;
 
-        return $this;
+        
     }
 
     /**
@@ -76,7 +76,7 @@ class Pasajero{
     {
         $this->documentoPasajero = $dni;
 
-        return $this;
+        
     }
 
     /**
@@ -96,13 +96,18 @@ class Pasajero{
     {
         $this->numeroTelefono = $numTelefono;
 
-        return $this;
+        
     }
 
     public function __toString(){
 
-        return "(".$this->getNombrePasajero()." ".$this->getApellidoPasajero()." ".$this->getDocumentoPasajero()." ".$this->getNumeroTelefono().")\n";
+        $cadena= "Nombre y apellido del pasajero: ".$this->getNombrePasajero()." ".$this->getApellidoPasajero()."\n";
+        $cadena .="Numero de documento: ".$this->getDocumentoPasajero()."\n";
+        $cadena .= "Telefono: ".$this->getNumeroTelefono()."\n";
+
+        return $cadena;
     }
+
 }
 
 

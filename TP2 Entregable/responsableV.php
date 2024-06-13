@@ -2,14 +2,14 @@
 
 class  ResponsableV {
 
-    private int $numeroEmpleado;
-    private int $numeroLicencia;
-    private string $nombreEmpleado;
-    private string $apellidoEmpleado;
+    private $numeroEmpleado;
+    private $numeroLicencia;
+    private $nombreEmpleado;
+    private $apellidoEmpleado;
 
-    public function __construct($numEpleado,$numLicencia,$nombre,$apellido){
+    public function __construct($numEmpleado,$numLicencia,$nombre,$apellido){
 
-        $this->numeroEmpleado = $numEpleado;
+        $this->numeroEmpleado = $numEmpleado;
         $this->numeroLicencia = $numLicencia;
         $this->nombreEmpleado = $nombre;
         $this->apellidoEmpleado = $apellido;
@@ -33,7 +33,7 @@ class  ResponsableV {
     {
         $this->numeroEmpleado = $numEmpleado;
 
-        return $this;
+        
     }
 
     /**
@@ -53,7 +53,7 @@ class  ResponsableV {
     {
         $this->numeroLicencia = $numLicencia;
 
-        return $this;
+       
     }
 
     /**
@@ -73,7 +73,7 @@ class  ResponsableV {
     {
         $this->nombreEmpleado = $nombre;
 
-        return $this;
+        
     }
 
     /**
@@ -93,11 +93,15 @@ class  ResponsableV {
     {
         $this->apellidoEmpleado = $apellido;
 
-        return $this;
+       
     }
 
     public function __toString(){
 
-        return "(".$this->getNumeroEmpleado()." ".$this->getNumeroLicencia()." ".$this->getNombreEmpleado()." ".$this->getApellidoEmpleado().")\n";
+        $cadena = "Numero de empleado: ".$this->getNumeroEmpleado()."\n";
+        $cadena .= "Numero de lincencia: ".$this->getNumeroLicencia()."\n"; 
+        $cadena .= "El nombre y apellido del Responsable es: ".$this->getNombreEmpleado()." ".$this->getApellidoEmpleado()."\n";
+
+        return $cadena;
     }
 }
